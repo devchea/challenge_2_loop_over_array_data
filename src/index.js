@@ -14,6 +14,8 @@ import users from "./users-data";
  * -----------------------------
  */
 function App() {
+  console.log(users);
+
   return (
     <div className="App">
       <div className="page-deets">
@@ -25,6 +27,11 @@ function App() {
         display data here
         {/* Display each data in array in a card */}
         {/* Each card must have a 'key' attribute */}
+        {users.map((user, index) => (
+          <div key={index}>
+            <h3>{user.name}</h3>
+          </div>
+        ))}
       </div>
       <ScotchInfoBar />
     </div>
